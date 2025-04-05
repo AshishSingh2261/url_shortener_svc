@@ -1,0 +1,51 @@
+version: '3'
+services:
+  tinyurl:
+    tty: true
+    container_name: tiny_url
+    environment:
+      - ENV=${ENV}
+      - SETUP=LOCAL
+      - MONGO_URL=mongodb://mongodb/
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8000:5000
+    volumes:
+      - ./src:/app/src
+    deploy:
+      resources:
+        limits:
+          memory: 3096M
+          cpus: '1'
+    networks:
+      - monitoring-net
+
+  mongodb:
+    image: mongo:6
+    container_name: tiny_url_mongo
+    ports:
+      - 27017:27017
+    volumes:
+      - ./tmp/mongodb:/data/db
+    networks:
+      - monitoring-net
+
+  cache:
+    image: redis:6.2-alpine
+    restart: always
+    ports:
+      - 6379:6379
+    command: redis-server --save 20 1 --loglevel warning 
+    volumes: 
+      - cache:/data/cache
+    networks:
+      - monitoring-net
+
+volumes:
+  cache:
+    driver: local
+networks:
+  monitoring-net:
+    driver: bridge
