@@ -53,7 +53,7 @@ A high-performance, container-safe URL shortening service built with **FastAPI**
 {
   "tiny_url": "https://tinyurl/abc123",
   "original_url": "https://example.com/long-link"
-}
+}'''
 
 ### 🔗 Fetch Original URL
 
