@@ -75,15 +75,15 @@ Redirects to the original URL if the hash is valid.
 ### 📥 Install dependencies
 
 ```bash
-pip install -r requirements.txt
+pip install -r requirements.txt```
 
 ### 🚀 Start the service
 
-uvicorn main:app --reload
+```bash
+uvicorn main:app --reload```
+
 The service will be live at: http://localhost:8000/service
 
 
 API Documentation
 Swagger UI: http://localhost:8000/service/docs
-
-Redoc: http://localhost:8000/service/redoc
