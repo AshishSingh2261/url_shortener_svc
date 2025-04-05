@@ -66,8 +66,6 @@ class TinyUrl:
     async def create_new_counter_record(self) -> None:
         """creates a new counter record in DB if one does not exist from a fixed block size"""
 
-        
-
         default_record = {
             "counter_block": "COUNTER_BLOCK",
             "current_block": self.default_counter_block,

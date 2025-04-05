@@ -77,10 +77,3 @@ app.include_router(router, prefix="/service")
 
 if __name__:
     pass
-
-# Done:
-# 1. created a basic working model with mongodb and redis setup and redirect logic working.
-# 2. Logging and exception chaining setup properly
-# 3. DB writes and reads are optimised. Caching is implemented for reads
-# 4. Type hints are added properly
-# 5. Only load testing left

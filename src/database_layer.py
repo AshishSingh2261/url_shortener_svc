@@ -29,9 +29,7 @@ class AsyncDatabaseClient:
             self.database = self.connection["tinyurl_db"]
             self.collections: Dict[str, AgnosticCollection] = {}
             collection_names = await self.database.list_collection_names()
-            print("debug", collection_names)
             for name in collection_names:
-                print(name)
                 self.collections[name] = self.database[name]
         except Exception as e:
             logging.fatal(f"DocumentDB Connection failed: {repr(e)} {str(e)}")
