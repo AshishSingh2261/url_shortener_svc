@@ -1,6 +1,6 @@
 # 🔗 TinyURL Service
 
-A high-performance, container-safe URL shortening service built with **FastAPI**, **MongoDB**, **Redis**, and **asyncio**. This service uses a synchronized counter with locking to generate unique short URLs across containers.
+A URL shortening service built with **FastAPI**, **MongoDB**, **Redis**, and **asyncio**. This service uses a synchronized counter with locking to generate unique short URLs across containers.
 
 ---
 
@@ -48,8 +48,11 @@ A high-performance, container-safe URL shortening service built with **FastAPI**
 ```json
 {
   "original_url": "https://example.com/long-link"
-}
+}```
 
+**Response Body:**
+
+```json
 {
   "tiny_url": "https://tinyurl/abc123",
   "original_url": "https://example.com/long-link"
