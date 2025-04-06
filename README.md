@@ -25,17 +25,7 @@ A URL shortening service built with **FastAPI**, **MongoDB**, **Redis**, and **a
 
 ---
 
-## 📂 Project Structure
 
-.
-├── main.py                 # FastAPI server and routes
-├── src/
-│   ├── database_layer.py   # MongoDB client and helpers
-│   └── tinyurl.py          # URL shortening logic & counter
-
-
-
----
 
 ## 📌 API Endpoints
 
@@ -48,7 +38,8 @@ A URL shortening service built with **FastAPI**, **MongoDB**, **Redis**, and **a
 ```json
 {
   "original_url": "https://example.com/long-link"
-}```
+}
+```
 
 **Response Body:**
 
@@ -56,11 +47,12 @@ A URL shortening service built with **FastAPI**, **MongoDB**, **Redis**, and **a
 {
   "tiny_url": "https://tinyurl/abc123",
   "original_url": "https://example.com/long-link"
-}```
+}
+```
 
 ### 🔗 Fetch Original URL
 
-**GET** /service/fetch_original_url/{tiny_url_hash}
+**GET** `/service/fetch_original_url/{tiny_url_hash}`
 
 Redirects to the original URL if the hash is valid.
 
@@ -78,12 +70,14 @@ Redirects to the original URL if the hash is valid.
 ### 📥 Install dependencies
 
 ```bash
-pip install -r requirements.txt```
+pip install -r requirements.txt
+```
 
 ### 🚀 Start the service
 
 ```bash
-uvicorn main:app --reload```
+uvicorn main:app --reload
+```
 
 The service will be live at: http://localhost:8000/service
 
